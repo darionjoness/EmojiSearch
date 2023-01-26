@@ -14,7 +14,6 @@ body{
   background-color: #E3F6FF ;
 }
 
-.app
 
 .container{
   max-width: 1200px;
@@ -31,11 +30,13 @@ body{
 .guide{
   text-align: center;
   color: var(--secondary-color);
+  font-size: 1.6rem;
+  margin-top: 10px;
 }
 
 .card{
   background-color: var(--primary-color);
-  width: 600px;
+  width: 700px;
   margin: 0 auto;
   padding: 15px;
   border-radius: 5px;
@@ -117,6 +118,7 @@ body{
   text-align: center;
   margin: 20px 0;
   font-size: 1.5rem;
+  color: var(--secondary-color);
 }
 
 .termNotFound{
