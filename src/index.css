@@ -1,13 +1,131 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+  --primary-color: #FFEA20;
+  --secondary-color: #8DCBE6;
+  --third-color: #9DF1DF;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body{
+  background-color: #E3F6FF ;
+}
+
+.app
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.header{
+  text-align: center;
+  margin: 15px 0;
+  color: var(--secondary-color);
+}
+
+.guide{
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+.card{
+  background-color: var(--primary-color);
+  width: 600px;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
+}
+
+.searchEmojis{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.searchEmojis input{
+  padding: 5px;
+  width: 90%;
+  font-size: 1.1rem;
+}
+
+.searchEmojis input:focus{
+  outline: none;
+}
+
+.searchIcon{
+  background-color: var(--third-color);
+  margin: 0 5px;
+  display: flex;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.searchIcon:active{
+  transform: scale(0.98);
+}
+
+.icon{
+  font-size: 1.2rem;
+  margin: 8px 25px;
+  color: var(--secondary-color);
+}
+
+.displayEmojis{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.displayEmoji{
+  background-color: var(--third-color);
+  margin: 10px 5px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color:gray;
+}
+
+.emojiName{
+  display: flex;
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.emojiName span{
+  margin-right: 5px;
+}
+
+.emojiImg{
+  display: flex;
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.emojiImg span{
+  margin-right: 5px;
+}
+
+.loading{
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.5rem;
+}
+
+.termNotFound{
+  color: red;
+  text-align: center;
+  margin: 30px 0;
+  font-size: 1.5rem;
+}
+
+
+
+

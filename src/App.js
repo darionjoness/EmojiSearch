@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import SearchEmojis from "./components/SearchEmojis";
+import DisplayEmojis from "./components/DisplayEmojis";
+import Guide from "./components/Guide";
+import { useState, useEffect } from "react";
+
 
 function App() {
+  const [inputText, setInputText] = useState('')
+  const [activeData, setActiveData] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+  
+
+    const searchEmojis = async () => {
+      setIsLoading(true)
+      const res = await fetch(`https://emoji-api.com/emojis?search=${inputText}&access_key=d8c3675bbc6106ed0f2a6a6ec0c1b595360a9a8c`)
+
+
+      const data = await res.json()
+
+      setActiveData(data)
+      setIsLoading(false)
+      setInputText('')
+    }
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app container">
+      <Header />
+      <div className="card">
+        <Guide />
+        <SearchEmojis inputText={inputText} onChange={(e) => setInputText(e.target.value)} onClick={searchEmojis} />
+        {isLoading && <p className="loading">Loading...</p>}
+        <DisplayEmojis emojiItems={activeData} />
+      </div>
     </div>
   );
 }
